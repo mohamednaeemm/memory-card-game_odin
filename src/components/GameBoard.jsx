@@ -29,12 +29,12 @@ const GameBoard = () => {
   }, [difficulty]);
 
   const handleCardClick = (card) => {
-    const cardClickSound = new Audio('/src/assets/sounds/card-click.mp3');
+    const cardClickSound = new Audio('/src/assets/sounds/mixkit-negative-tone-interface-tap-2569.wav');
     cardClickSound.play();
 
     if (selectedCards.includes(card.id)) {
       // Wrong selection (lose)
-      const wrongSound = new Audio('/src/assets/sounds/wrong-selection.mp3');
+      const wrongSound = new Audio('/src/assets/sounds/mixkit-click-error-1110.wav');
       wrongSound.play();
       if (score > bestScore) setBestScore(score);
       setShowResult(true);
@@ -49,7 +49,7 @@ const GameBoard = () => {
         setShowResult(true);
         setIsWin(true); // Indicate it's a win
         // Optionally play a win sound here
-        const winSound = new Audio('/src/assets/sounds/congrats.mp3'); // Assuming you have a win sound
+        const winSound = new Audio('/src/assets/sounds/mixkit-achievement-bell-600.wav'); // Assuming you have a win sound
         winSound.play();
       }
     }
