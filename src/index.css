@@ -26,7 +26,7 @@ body {
 }
 
 button {
-    width: 20%;
+    width: 10rem;
     padding: 1rem;
     font-size: 1.2rem;
     color: #fff;
@@ -196,4 +196,79 @@ button:hover {
 
 .result button:hover {
     background-color: #555;
+}
+
+@media (max-width: 850px) {
+    .card {
+        width: 27%;
+    }
+    
+    .card p {
+        font-size: 1.5rem;
+    }
+    
+    .result-container {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .result {
+        width: 70%;
+    }
+    .result h2 {
+        font-size: 2.5rem;
+    }
+    
+    .result p {
+        font-size: 1.8rem;
+    }
+
+    .result .result-buttons {
+        margin-top: 2rem;
+    }
+    
+    .result button {
+        width: 10rem;
+        height: 3rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-container {
+        width: 95vw;
+    }
+    
+    .card img {
+        width: 150%;
+    }
+
+    .card {
+        width: 24%;
+    }
+    
+    .card p {
+        font-size: .8rem;
+    }
+    
+    .result-container {
+        width: 90vw;
+    }
+    
+    .result {
+        width: 85%;
+    }
+
+    .result .result-buttons {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    
+    .result button {
+        width: 7rem;
+        height: 3rem;
+        font-size: 1rem;
+    }
 }
