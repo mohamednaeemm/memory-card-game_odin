@@ -3,8 +3,8 @@ import React from 'react';
 const ScoreDisplay = ({ score, bestScore, isWin }) => {
   return (
     <div className="score-display">
-      <p>Current Score: {score}</p>
-      <p>Best Score: {isWin ? score : bestScore}</p>
+      <p>Current Score: <span>{score}</span></p>
+      <p>Best Score: <span>{isWin ? score : bestScore}</span></p>
     </div>
   );
 };
