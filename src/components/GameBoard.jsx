@@ -5,7 +5,7 @@ import Loading from './Loading';
 import ScoreDisplay from './ScoreDisplay';
 import Result from './Result';
 import { fetchCards } from '../services/api';
-import shuffleArray from '../utils/shuffle';
+import shuffleArray from '../utils/Shuffle';
 
 const GameBoard = () => {
   const location = useLocation();
