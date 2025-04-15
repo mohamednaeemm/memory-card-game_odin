@@ -1,6 +1,6 @@
 # Memory Card Game
 
-[Live Version](https://memory-card-game-example.netlify.app/)
+[Live Version](https://memory-card-game-odin.vercel.app/)
 
 ## Project Overview
 
