@@ -1,12 +1,56 @@
-# React + Vite
+# Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Version](https://memory-card-game-example.netlify.app/)
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a **Memory Card Game** built with **React** and **Vite**, designed to test players' memory by challenging them to select unique Pokémon cards without repeating any. The game fetches Pokémon data from the [PokéAPI](https://pokeapi.co/) and includes three difficulty levels: Easy (5 cards), Medium (10 cards), and Hard (20 cards). The game features sound effects for card clicks, wins, and losses, a blurred background effect when the game ends, and a responsive UI.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Difficulty Selection**: Choose from Easy (5 cards), Medium (10 cards), or Hard (20 cards).
+- **Dynamic Card Fetching**: Uses PokéAPI to fetch Pokémon cards with unique IDs, names, and images.
+- **Game Mechanics**:
+  - Cards shuffle after each correct pick and when a new difficulty is selected.
+  - Players lose if they select a card they’ve already picked.
+  - Players win by selecting all unique cards without repetition.
+- **Sound Effects**:
+  - Card click sound for each interaction.
+  - Win sound (celebratory) when the player wins.
+  - Lose sound (buzzer) when the player selects a repeated card.
+- **Result Screen**: Displays "You Win!" or "Wrong Selection!" with the current score and best score, along with options to play again or return to the menu.
+- **Visual Effects**: Background blurs when the result screen appears, keeping the result modal sharp and centered.
+- **Responsive Design**: Works on desktop and mobile devices with a grid-based card layout.
+
+
+## Project Structure
+
+```plaintext
+memory-card-game/
+├── src/
+│   ├── assets/
+│   │   └── sounds/
+│   │       ├── click.mp3
+│   │       ├── win.mp3
+│   │       └── lose.mp3
+│   ├── components/
+│   │   ├── Card.jsx
+│   │   ├── DifficultySelector.jsx
+│   │   ├── GameBoard.jsx
+│   │   ├── Loading.jsx
+│   │   ├── Menu.jsx
+│   │   ├── Result.jsx
+│   │   └── ScoreDisplay.jsx
+│   ├── services/
+│   │   └── api.js
+│   ├── utils/
+│   │   └── shuffle.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── public/
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
