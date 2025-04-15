@@ -29,12 +29,12 @@ const GameBoard = () => {
   }, [difficulty]);
 
   const handleCardClick = (card) => {
-    const cardClickSound = new Audio('/src/assets/sounds/click.wav');
+    const cardClickSound = new Audio('/sounds/click.wav');
     cardClickSound.play();
 
     if (selectedCards.includes(card.id)) {
       // Wrong selection (lose)
-      const wrongSound = new Audio('/src/assets/sounds/lose.wav');
+      const wrongSound = new Audio('/sounds/lose.wav');
       wrongSound.play();
       if (score > bestScore) setBestScore(score);
       setShowResult(true);
@@ -49,7 +49,7 @@ const GameBoard = () => {
         setShowResult(true);
         setIsWin(true); 
         setBestScore(0);
-        const winSound = new Audio('/src/assets/sounds/win.wav');
+        const winSound = new Audio('/sounds/win.wav');
         winSound.play();
       }
     }
