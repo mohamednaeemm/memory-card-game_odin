@@ -16,7 +16,7 @@ const GameBoard = () => {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [showResult, setShowResult] = useState(false);
-  const [isWin, setIsWin] = useState(false); // Track if it's a win or lose
+  const [isWin, setIsWin] = useState(false);
 
   useEffect(() => {
     const loadAndShuffleCards = async () => {
@@ -38,18 +38,18 @@ const GameBoard = () => {
       wrongSound.play();
       if (score > bestScore) setBestScore(score);
       setShowResult(true);
-      setIsWin(false); // Indicate it's a loss
+      setIsWin(false);
     } else {
       setSelectedCards([...selectedCards, card.id]);
       setScore(score + 1);
       setCards(shuffleArray(cards)); // Shuffle after each correct pick
 
-      // Check if user won (selected all unique cards)
+      // Check if user won
       if (selectedCards.length + 1 === cards.length) {
         setShowResult(true);
-        setIsWin(true); // Indicate it's a win
-        // Optionally play a win sound here
-        const winSound = new Audio('/src/assets/sounds/mixkit-achievement-bell-600.wav'); // Assuming you have a win sound
+        setIsWin(true); 
+        setBestScore(0);
+        const winSound = new Audio('/src/assets/sounds/mixkit-achievement-bell-600.wav');
         winSound.play();
       }
     }
@@ -60,25 +60,25 @@ const GameBoard = () => {
     setScore(0);
     setShowResult(false);
     setIsWin(false);
-    setCards(shuffleArray(cards)); // Shuffle for new game
+    setCards(shuffleArray(cards));
   };
 
   const handleBackToMenu = () => {
-    window.location.href = '/'; // Simple redirect; use navigate if using Router
+    window.location.href = '/';
   };
 
   if (loading) return <Loading />;
 
   return (
     <div className="game-board">
-      <ScoreDisplay score={score} bestScore={bestScore} />
+      <ScoreDisplay score={score} bestScore={bestScore} isWin={isWin} />
       {showResult ? (
         <Result 
           score={score} 
           bestScore={bestScore} 
           onPlayAgain={handlePlayAgain} 
           onBackToMenu={handleBackToMenu} 
-          isWin={isWin} // Pass whether it's a win or lose
+          isWin={isWin}
         />
       ) : (
         <div className="cards-container">

@@ -5,7 +5,7 @@ const Result = ({ score, bestScore, onPlayAgain, onBackToMenu, isWin }) => {
     <div className={`result ${isWin ? 'win' : 'lose'}`}>
       <h2>{isWin ? 'You Win!' : 'Wrong Selection!'}</h2>
       <p>Your Score: {score}</p>
-      <p>Best Score: {bestScore}</p>
+      <p>Best Score: {isWin ? score : bestScore}</p>
       <button onClick={onPlayAgain}>Play Again</button>
       <button onClick={onBackToMenu}>Back to Menu</button>
     </div>
