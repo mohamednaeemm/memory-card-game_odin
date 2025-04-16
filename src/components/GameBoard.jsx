@@ -42,7 +42,7 @@ const GameBoard = () => {
     } else {
       setSelectedCards([...selectedCards, card.id]);
       setScore(score + 1);
-      setCards(shuffleArray(cards)); // Shuffle after each correct pick
+      setCards(shuffleArray(cards));
 
       // Check if user won
       if (selectedCards.length + 1 === cards.length) {
@@ -71,7 +71,7 @@ const GameBoard = () => {
 
   return (
     <div className="game-board">
-      <ScoreDisplay score={score} bestScore={bestScore} isWin={isWin} />
+      <ScoreDisplay score={score} bestScore={bestScore} />
       {showResult ? (
         <Result 
           score={score} 

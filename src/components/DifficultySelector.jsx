@@ -8,7 +8,6 @@ const DifficultySelector = () => {
   const handleSelect = (level) => {
     setDifficulty(level);
     navigate('/game', { state: { difficulty: level } });
-    console.log('Selected difficulty:', level);
   };
 
   return (
